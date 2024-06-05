@@ -1,0 +1,55 @@
+from flask import Flask, request, render_template, redirect, url_for
+import chatbot
+import chatterbot
+
+app = Flask(__name__)
+
+# Define redirection rules
+redirections = {
+    "help": "commands",
+    "commands": "commands",
+    "weather": "weather",
+    "news": "news"
+}
+
+# Define chat pairs for NLTK Chat
+chat_pairs = [
+    (r'quit', ["Goodbye!", "Bye for now!", "See you later!"]),
+    # Add more chat pairs for different topics...
+]
+
+# Function to handle redirections
+def redirect_to_page(input_text):
+    for key in redirections:
+        if key in input_text.lower():
+            return redirections[key]
+    return None
+
+# Main interaction route
+@app.route('/', methods=['GET', 'POST'])
+def chat():
+    if request.method == 'POST':
+        user_input = request.form['user_input']
+        redirected_page = redirect_to_page(user_input)
+        if redirected_page:
+            return redirect(url_for(redirected_page))
+        else:
+            response = chatbot.respond(user_input)
+            return render_template('chat.html', response=response)
+    return render_template('chat.html', response=None)
+
+# Route for different pages
+@app.route('/commands')
+def commands():
+    return render_template('commands.html')
+
+@app.route('/blogs')
+def blogs():
+    return render_template('blogs.html')
+
+@app.route('/shop')
+def shop():
+    return render_template('shop.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
