@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html lang="en" lang="en">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="/w3css/3/w3.css">
+    <head>
+        <meta charset="UTF-8">
+        <title>Chatbot</title>
+    </head>
+    <body>
+        <img src="../static/images/figma-logo3.png" alt="logo" height=70 width=150/>
+        <div class="menubar">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/shop">Shop</a>
+            <a href="/blogs">Blogs</a>
+            
+           <div class = "topnav-right">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+           </div>
+        </div>
+
+        <section class="heading">
+            <h1>Blogs</h1>
+            <br><br>
+            <p>This section contains information on different blogpost contributed by people working and manufacturing office goods................</p>
+        </section>
+
+        <section class="blogbox1">
+            <div class="team-container-about">
+                <div class="team-member-about">
+                    <h3>Productivity tools you need to do more work in less time </h3>
+                    
+                </div>
+                <div class="team-member-about">
+                    <h3>Team building activity games you can organize for better team engagement</h3>
+                    
+                </div>
+                <div class="team-member-about">
+                    <h3>All you need to know about time management in a workspace</h3>
+                    
+                </div>
+
+                <div class="team-member-about">
+                    <h3>What it means to have a minimal workspace</h3>
+                    
+                </div>
+            
+            </div>
+            <div class="team-container-about">
+                <div class="team-member-about">
+                    <h3>Productivity tools you need to do more work in less time </h3>
+                    
+                </div>
+                <div class="team-member-about">
+                    <h3>Team building activity games you can organize for better team engagement</h3>
+                    
+                </div>
+                <div class="team-member-about">
+                    <h3>All you need to know about time management in a workspace</h3>
+                    
+                </div>
+            </div>
+        </section>
+            <!-- <p>
+                <button type="button" class="something" data-toggle="collapse" data-target="#"></button>
+
+            </p>             -->
+
+        
+        <!-- chatbot stuff-->
+        <div class="container">
+            <div class="chatbox">
+                <div class="chatbox__support">
+                    <div class="chatbox__header">
+                        <div class="chatbox__image--header">
+                            <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image">
+                        </div>
+                        <div class="chatbox__content--header">
+                            <h4 class="chatbox__heading--header">Chat support</h4>
+                            <p class="chatbox__description--header">Hello, I am your Virtual Assistant. How may I help you?</p>
+                        </div>
+                    </div>
+                    <div class="chatbox__messages">
+                        <div></div>
+                    </div>
+                    <div class="chatbox__footer">
+                        <input type="text" placeholder="Write a message...">
+                        <button class="chatbox__send--footer send__button">Send</button>
+                    </div>
+                </div>
+                <div class="chatbox__button">
+                    <button><img src="{{ url_for('static', filename='images/chatbox-icon.svg') }}" /></button>
+                </div>
+            </div>
+        </div>
+     
+        <script>
+            $SCRIPT_ROOT = {{ request.script_root|tojson }};
+        </script>
+        <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+    </body>
+    </html>
