@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-from chat import get_response
+from chat import get_response  # chat.py
 
 # flask constructor that points to the start of the application
 app = Flask(__name__, template_folder='templates')
@@ -30,7 +30,7 @@ def predict():
     if "blogs page" in text.lower():
         return jsonify({"redirect": "/blogs"})
     # if "shop page" in text.lower():
-    #     return jsonify({"redirect": "/shop"})
+    #     return jsonify({"redirect": "/shop"}) as it is present in intents
     # check if text is valid
     response = get_response(text)
     #message = {"answer": response}

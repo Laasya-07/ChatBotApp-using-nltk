@@ -3,8 +3,8 @@ import json
 
 import torch
 
-from model import NeuralNet
-from nltk_utils import bag_of_words, tokenize
+from model import NeuralNet # model.py
+from nltk_utils import bag_of_words, tokenize #nltk_utils.py
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -25,7 +25,7 @@ model = NeuralNet(input_size, hidden_size, output_size).to(device)
 model.load_state_dict(model_state)
 model.eval()
 
-bot_name = "Laasya's Bot"
+bot_name = "Laasya's Bot" #only needed for cli based bot
 
 def get_response(msg):
     sentence = tokenize(msg)
@@ -38,7 +38,7 @@ def get_response(msg):
 
     tag = tags[predicted.item()]
 
-    probs = torch.softmax(output, dim=1)
+    probs = torch.softmax(output, dim=1) # for prob
     prob = probs[0][predicted.item()]
     if prob.item() > 0.75:
         for intent in intents['intents']:

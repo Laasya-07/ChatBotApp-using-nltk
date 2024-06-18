@@ -14,9 +14,7 @@
         "responses": [
           "Hey :-)",
           "Hello, Good day to you",
-          "Hello, thanks for visiting",
-          "Hi there, what can I do for you?",
-          "Hi there, how can I help?"
+          "Hello, thanks for visiting"
         ]
       },
 
@@ -78,6 +76,8 @@
           "Mode of Payment?",
           "Modes of Payment?",
           "Modes of Payments?",
+          "How do i purchase?",
+          "How to pay?",
           "How can I pay?",
           "Do you accept Mastercard?",
           "Can I pay with Paypal?",

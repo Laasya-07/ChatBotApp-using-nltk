@@ -1,5 +1,5 @@
 import torch
-import torch.nn as nn
+import torch.nn as nn #pytorch
 
 
 class NeuralNet(nn.Module):
@@ -8,7 +8,7 @@ class NeuralNet(nn.Module):
         self.l1 = nn.Linear(input_size, hidden_size) 
         self.l2 = nn.Linear(hidden_size, hidden_size) 
         self.l3 = nn.Linear(hidden_size, num_classes)
-        self.relu = nn.ReLU()
+        self.relu = nn.ReLU() #Rectified Linear Unit
     
     def forward(self, x):
         out = self.l1(x)
